@@ -38,7 +38,6 @@ const config: Config = {
         docs: {
           routeBasePath: '/',                          // docs live at / (prefixed by baseUrl=/guide/)
           sidebarPath: require.resolve('./sidebars.ts'),
-          editUrl: null,                               // remove "Edit this page" links (polished, public resource)
           breadcrumbs: true,
           showLastUpdateTime: true,
           showLastUpdateAuthor: false,
@@ -65,12 +64,13 @@ const config: Config = {
       logo: {
         alt: 'Esy Logo',
         src: 'img/logo.svg',
+        href: '/intro',
       },
       items: [
         // Sidebar link to the guide root (uses the default docs sidebar id)
         {
           type: 'docSidebar',
-          sidebarId: 'default', // <- make sure this matches your sidebars.ts export; often 'default'
+          sidebarId: 'tutorialSidebar', // <- make sure this matches your sidebars.ts export
           position: 'left',
           label: 'Contents',
         },
@@ -89,8 +89,7 @@ const config: Config = {
           title: 'Guide',
           items: [
             // If your first doc id is 'intro' or 'start-here', update the path to match
-            { label: 'Start Here', to: '/' },
-            { label: 'Prompt Engineering', to: '/prompt-engineering' }, // update if different
+            { label: 'Start Here', to: '/intro' }
           ],
         },
         {
