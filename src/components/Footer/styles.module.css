@@ -1,0 +1,139 @@
+/* Footer styles matching main esy.com site */
+.footer {
+  padding: 3rem 2rem;
+  background: #16161f;
+  border-top: 1px solid #2a2a3a;
+}
+
+.footerContent {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footerLogo img {
+  /* Using colored logo, no filter needed */
+}
+
+.footerDesc {
+  color: #94a3b8;
+  line-height: 1.6;
+  font-size: 0.938rem;
+  max-width: 400px;
+}
+
+.footerSocials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6366f1;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  transform: translateY(-2px);
+  background: rgba(99, 102, 241, 0.2);
+  color: #6366f1;
+}
+
+.footerColumn h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footerLink {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.footerLink:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footerBottom {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #2a2a3a;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .footerContent {
+    grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footerBrand {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .footerDesc {
+    text-align: center;
+  }
+  
+  .footerColumn {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+  
+  .footerContent {
+    gap: 1.5rem;
+  }
+}

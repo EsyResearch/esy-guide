@@ -63,7 +63,7 @@ const config: Config = {
       title: 'Guide',
       logo: {
         alt: 'Esy Logo',
-        src: 'img/logo.svg',
+        src: 'img/esy-logo.svg',
         href: '/',
       },
       items: [
