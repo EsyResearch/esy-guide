@@ -13,9 +13,9 @@ const config: Config = {
     v4: true,
   },
 
-  // For proxy deployment - no baseUrl needed
+  // For proxy deployment through esy.com/guide
   url: 'https://esy.com',
-  baseUrl: '/',
+  baseUrl: '/guide/',
   trailingSlash: false,
 
   // Not using GitHub Pages; keep these neutral or set to your repo if you later use docusaurus deploy

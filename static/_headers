@@ -1,5 +1,16 @@
-/guide/*
+/*
   Cache-Control: public, max-age=300
+  Access-Control-Allow-Origin: https://esy.com
 
-/guide/assets/*
+/assets/*
   Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: https://esy.com
+
+/*.css
+  Access-Control-Allow-Origin: https://esy.com
+  
+/*.js
+  Access-Control-Allow-Origin: https://esy.com
+  
+/img/*
+  Access-Control-Allow-Origin: https://esy.com
