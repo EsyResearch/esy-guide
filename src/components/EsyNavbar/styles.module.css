@@ -1,0 +1,201 @@
+/* Esy Navbar styles matching main esy.com site */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #2a2a3a;
+  transition: transform 0.3s ease;
+}
+
+.navbarHidden {
+  transform: translateY(-100%);
+}
+
+.navbarInner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbarItems {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.navbarBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.navbarBrand:hover {
+  opacity: 0.8;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.navbarLogo {
+  width: 32px;
+  height: 32px;
+}
+
+.logoSuffix {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  font-weight: 500;
+  margin-left: 0.25rem;
+}
+
+.navbarTitle {
+  font-weight: 700;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.navbarTitle::before {
+  content: '-';
+  position: absolute;
+  left: 0.5rem;
+  color: #64748b;
+}
+
+.navbarItemsLeft {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbarLink {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbarLink:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbarItemsRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbarCta {
+  background: #6366f1;
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.navbarCta:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.navbarToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.2s;
+}
+
+.navbarToggle:hover {
+  color: #ffffff;
+}
+
+/* Mobile menu */
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 15, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #2a2a3a;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobileLink {
+  display: block;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.mobileLink:hover {
+  color: #ffffff;
+  background: rgba(99, 102, 241, 0.1);
+  text-decoration: none;
+}
+
+.mobileCta {
+  display: block;
+  background: #6366f1;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+
+.mobileCta:hover {
+  background: #4f46e5;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbarInner {
+    padding: 1rem;
+  }
+  
+  .navbarItemsLeft {
+    display: none;
+  }
+  
+  .navbarCta {
+    display: none;
+  }
+  
+  .navbarToggle {
+    display: block;
+  }
+  
+  .mobileMenu {
+    display: flex;
+  }
+}
