@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {useBaseUrl} from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
 function FooterColumn({ title, links }) {
@@ -26,7 +27,7 @@ function Footer() {
       <div className={styles.footerContent}>
         <div className={styles.footerBrand}>
           <div className={styles.footerLogo}>
-            <img src="/guide/img/esy-logo.svg" alt="Esy Logo" width="60" height="60" />
+            <img src={useBaseUrl('/img/esy-logo.svg')} alt="Esy Logo" width="60" height="60" />
             <span>esy</span>
           </div>
           <p className={styles.footerDesc}>

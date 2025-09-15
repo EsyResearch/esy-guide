@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {useBaseUrl} from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
 function Navbar() {
@@ -25,7 +26,7 @@ function Navbar() {
       <div className={styles.navbarInner}>
         <div className={styles.navbarItems}>
           <Link to="/" className={styles.navbarBrand}>
-            <img src="/guide/img/esy-logo.svg" alt="Esy Logo" className={styles.navbarLogo} />
+            <img src={useBaseUrl('/img/esy-logo.svg')} alt="Esy Logo" className={styles.navbarLogo} />
             <span className={styles.navbarTitle}>Guide</span>
           </Link>
           

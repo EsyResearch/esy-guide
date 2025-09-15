@@ -1,8 +1,11 @@
-# example netlify.toml
+# Netlify configuration
 [build]
-  command = "npm run build"
+  command = "cp docusaurus.config.netlify.ts docusaurus.config.ts && npm run build"
   functions = "netlify/functions"
   publish = "build"
+  
+[build.environment]
+  NODE_VERSION = "18"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
