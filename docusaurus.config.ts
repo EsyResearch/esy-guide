@@ -64,7 +64,7 @@ const config: Config = {
       logo: {
         alt: 'Esy Logo',
         src: 'img/logo.svg',
-        href: '/intro',
+        href: '/',
       },
       items: [
         // Sidebar link to the guide root (uses the default docs sidebar id)
@@ -89,7 +89,7 @@ const config: Config = {
           title: 'Guide',
           items: [
             // If your first doc id is 'intro' or 'start-here', update the path to match
-            { label: 'Start Here', to: '/intro' }
+            { label: 'Start Here', to: '/' }
           ],
         },
         {
