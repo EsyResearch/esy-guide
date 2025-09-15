@@ -1,36 +1,30 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'https://esy.com',
+  title: 'Esy Writing Guide',
   tagline: 'The Ultimate Essay Writing Guide',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  // Canonical site + base path for subdirectory hosting
+  url: 'https://esy.com',
+  baseUrl: '/guide/',
+  trailingSlash: false,
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  // Not using GitHub Pages; keep these neutral or set to your repo if you later use docusaurus deploy
+  organizationName: 'esy',   // <- optional: your GitHub org/user
+  projectName: 'guide',      // <- optional: your repo name
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -40,104 +34,85 @@ const config: Config = {
     [
       'classic',
       {
+        // Put the "book" (docs) at the root of this app so it renders under /guide in prod
         docs: {
-          sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          routeBasePath: '/',                          // docs live at / (prefixed by baseUrl=/guide/)
+          sidebarPath: require.resolve('./sidebars.ts'),
+          editUrl: null,                               // remove "Edit this page" links (polished, public resource)
+          breadcrumbs: true,
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: false,
+          remarkPlugins: [],
+          rehypePlugins: [],
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+
+        // This project is a single evergreen reference (no blog/pages)
+        blog: false,
+        pages: false,
+
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: require.resolve('./src/css/custom.css'),
         },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/docusaurus-social-card.jpg', // replace with your social card when ready
+
     navbar: {
-      title: 'My Site',
+      title: 'Guide',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Esy Logo',
         src: 'img/logo.svg',
       },
       items: [
+        // Sidebar link to the guide root (uses the default docs sidebar id)
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'default', // <- make sure this matches your sidebars.ts export; often 'default'
           position: 'left',
-          label: 'Tutorial',
+          label: 'Contents',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
-        },
+        // Link back to main site surfaces (use absolute URLs so they don’t inherit /guide/)
+        { href: 'https://esy.com/school', label: 'School', position: 'left' },
+        { href: 'https://esy.com/essays', label: 'Essays', position: 'left' },
+        { href: 'https://esy.com/blog', label: 'Blog', position: 'left' },
+        { href: 'https://app.esy.com', label: 'Open in Esy', position: 'right' },
       ],
     },
+
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Guide',
           items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
+            // If your first doc id is 'intro' or 'start-here', update the path to match
+            { label: 'Start Here', to: '/' },
+            { label: 'Prompt Engineering', to: '/prompt-engineering' }, // update if different
           ],
         },
         {
-          title: 'Community',
+          title: 'Esy',
           items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
+            { label: 'School', href: 'https://esy.com/school' },
+            { label: 'Essays', href: 'https://esy.com/essays' },
+            { label: 'Blog', href: 'https://esy.com/blog' },
+            { label: 'App', href: 'https://app.esy.com' },
           ],
         },
         {
-          title: 'More',
+          title: 'Legal',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
+            { label: 'Privacy', href: 'https://esy.com/privacy' },
+            { label: 'Terms', href: 'https://esy.com/terms' },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Esy.`,
     },
+
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
