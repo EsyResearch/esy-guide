@@ -10,8 +10,18 @@ This Docusaurus site is configured with the documentation as the main content at
 docs: {
   sidebarPath: './sidebars.ts',
   routeBasePath: '/', // Docs at the root
-  homePageId: 'intro', // Set intro as homepage
 },
+```
+
+To make a specific doc the homepage, add `slug: /` to its frontmatter:
+
+```markdown
+---
+sidebar_position: 1
+slug: /
+---
+
+# Your Homepage Content
 ```
 
 ## Route Structure

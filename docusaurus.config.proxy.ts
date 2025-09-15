@@ -37,7 +37,6 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/', // Docs at the root
-          homePageId: 'intro', // Set intro as homepage
         },
         blog: false, // Disable blog
         theme: {
