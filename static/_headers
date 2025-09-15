@@ -1,0 +1,5 @@
+/guide/*
+  Cache-Control: public, max-age=300
+
+/guide/assets/*
+  Cache-Control: public, max-age=31536000, immutable
