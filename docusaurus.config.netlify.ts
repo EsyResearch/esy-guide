@@ -76,9 +76,6 @@ const config: Config = {
           label: 'Contents',
         },
         // Link back to main site surfaces (use absolute URLs so they don't inherit /guide/)
-        { href: 'https://esy.com/school', label: 'School', position: 'left' },
-        { href: 'https://esy.com/essays', label: 'Essays', position: 'left' },
-        { href: 'https://esy.com/blog', label: 'Blog', position: 'left' },
         { href: 'https://app.esy.com', label: 'Open in Esy', position: 'right' },
       ],
     },
