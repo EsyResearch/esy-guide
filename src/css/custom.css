@@ -69,22 +69,6 @@
   color: var(--ifm-navbar-link-hover-color);
 }
 
-/* Style the "Open in Esy" button */
-.navbar__item[href="https://app.esy.com"] {
-  background: var(--ifm-color-primary);
-  color: #ffffff !important;
-  padding: 0.5rem 1.25rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.2s;
-  margin-left: 1rem;
-}
-
-.navbar__item[href="https://app.esy.com"]:hover {
-  background: var(--ifm-color-primary-dark);
-  color: #ffffff !important;
-  transform: translateY(-1px);
-}
 
 /* Custom footer styling */
 .footer {

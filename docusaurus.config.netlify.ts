@@ -67,17 +67,7 @@ const config: Config = {
         src: 'img/esy-logo.svg',
         href: '/',
       },
-      items: [
-        // Sidebar link to the guide root (uses the default docs sidebar id)
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar', // <- make sure this matches your sidebars.ts export
-          position: 'left',
-          label: 'Contents',
-        },
-        // Link back to main site surfaces (use absolute URLs so they don't inherit /guide/)
-        { href: 'https://app.esy.com', label: 'Open in Esy', position: 'right' },
-      ],
+      items: [],
     },
 
     footer: {
