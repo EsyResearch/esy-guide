@@ -6,7 +6,7 @@ const Logo = ({
   suffix, 
   href = '', 
   className = '', 
-  size = 60,
+  size = 40,
   showText = true 
 }) => {
   const logoPath = useBaseUrl('/img/esy-logo.svg');
@@ -30,7 +30,7 @@ const Logo = ({
     </div>
   );
 
-  if (href) {
+  if (href && href !== '') {
     return (
       <a href={href} className={styles.logoLink}>
         {logoContent}

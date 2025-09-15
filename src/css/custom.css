@@ -97,3 +97,55 @@
 .navbar__toggle {
   display: none;
 }
+
+/* Ensure proper spacing for custom navbar */
+.main-wrapper {
+  padding-top: var(--ifm-navbar-height);
+}
+
+/* Add padding around the main document */
+.theme-doc-markdown {
+  padding: 1rem 0;
+}
+
+/* Add extra padding to the main container */
+main[class*="docMainContainer"] {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+/* Ensure footer has proper spacing */
+.theme-doc-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+/* Add padding to sidebar */
+.theme-doc-sidebar-container {
+  padding-top: 4rem;
+}
+
+aside[class*="docSidebarContainer"] {
+  padding-top: 4rem;
+}
+
+/* Add padding to sidebar menu */
+.menu {
+  padding: 1rem 0;
+}
+
+/* Add spacing to sidebar items */
+.theme-doc-sidebar-menu {
+  padding: 0 0.5rem;
+}
+
+/* Ensure TOC (table of contents) has proper spacing */
+.theme-doc-toc-desktop {
+  padding-top: 4rem;
+}
+
+/* Add padding to breadcrumbs */
+.theme-doc-breadcrumbs {
+  padding: 1rem 0 2rem 0;
+}

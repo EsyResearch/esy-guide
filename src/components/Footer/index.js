@@ -68,7 +68,7 @@ function Footer() {
             { href: "https://esy.com/school", text: "School" },
             { href: "https://esy.com/glossary", text: "Glossary" },
             { href: "https://esy.com/how-to-write", text: "How to Write" },
-            { to: "/", text: "Guide" }, // This guide itself
+            { to: "/", text: "Essay Guide" }, // This guide itself
           ]}
         />
         
