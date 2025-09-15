@@ -1,71 +1,82 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect, useState } from "react";
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Logo from "../Logo";
+import { Menu, X } from "lucide-react";
 import styles from './styles.module.css';
 
-function EsyNavbar() {
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+export default function EsyNavbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsNavbarVisible(currentScrollY < lastScrollY || currentScrollY < 50);
-      setLastScrollY(currentScrollY);
+      const nav = document.getElementById('nav');
+      if (nav) {
+        if (window.scrollY > 100) {
+          nav.style.background = 'rgba(10, 10, 15, 0.95)';
+        } else {
+          nav.style.background = 'rgba(10, 10, 15, 0.85)';
+        }
+      }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
+
+  useEffect(() => {
+    // Close mobile menu on resize to desktop
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
   return (
-    <nav className={`${styles.navbar} ${!isNavbarVisible ? styles.navbarHidden : ''}`}>
-      <div className={styles.navbarInner}>
-        <div className={styles.navbarItems}>
-          <Link to="/" className={styles.navbarBrand}>
-            <img src={useBaseUrl('/img/esy-logo.svg')} alt="Esy Logo" className={styles.navbarLogo} />
-            <span className={styles.logoSuffix}>Guide</span>
-            <span className={styles.navbarTitle}>The Essay Writing Guide</span>
-          </Link>
-          
-          <div className={styles.navbarItemsLeft}>
-            <Link to="/" className={styles.navbarLink}>Contents</Link>
-            <a href="https://esy.com/school" className={styles.navbarLink}>School</a>
-            <a href="https://esy.com/essays" className={styles.navbarLink}>Essays</a>
-            <a href="https://esy.com/blog" className={styles.navbarLink}>Blog</a>
-          </div>
+    <nav className={styles.nav} id="nav">
+      <div className={styles.navInner}>
+        <Link to="/" className={styles.logo}>
+          <Logo suffix="Guide" href="" showText={false} />
+        </Link>
+        
+        {/* Desktop Navigation */}
+        <div className={`${styles.navLinks} ${styles.desktopNav}`}>
+          <a href="https://app.esy.com" className={styles.navCta}>Start Writing</a>
         </div>
 
-        <div className={styles.navbarItemsRight}>
-          <a href="https://app.esy.com" className={styles.navbarCta}>
-            Open in Esy
-          </a>
-          
-          <button
-            aria-label="Navigation bar toggle"
-            className={styles.navbarToggle}
-            type="button"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+        {/* Mobile Menu Button */}
+        <button 
+          className={styles.mobileMenuButton}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Navigation Menu */}
+      <div className={`${styles.mobileNav} ${mobileMenuOpen ? styles.mobileNavOpen : ''}`}>
+        <div className={styles.mobileNavLinks}>
+          <a href="https://app.esy.com" className={styles.mobileNavCta}>Start Writing</a>
         </div>
       </div>
-      
-      {/* Mobile menu */}
-      {isMobileMenuOpen && (
-        <div className={styles.mobileMenu}>
-          <Link to="/" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>Contents</Link>
-          <a href="https://esy.com/school" className={styles.mobileLink}>School</a>
-          <a href="https://esy.com/essays" className={styles.mobileLink}>Essays</a>
-          <a href="https://esy.com/blog" className={styles.mobileLink}>Blog</a>
-          <a href="https://app.esy.com" className={styles.mobileCta}>Open in Esy</a>
-        </div>
-      )}
     </nav>
   );
 }
-
-export default EsyNavbar;
