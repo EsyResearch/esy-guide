@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import {useThemeConfig} from '@docusaurus/theme-common';
+import {useNavbarItems} from '@docusaurus/theme-common/internal';
+import NavbarItem from '@theme/NavbarItem';
+import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
+import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
+import NavbarLogo from '@theme/Navbar/Logo';
 import styles from './styles.module.css';
 
-function Navbar() {
-  const {siteConfig} = useDocusaurusContext();
+function NavbarContent() {
+  const items = useNavbarItems();
+  const {navbar} = useThemeConfig();
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,52 +24,34 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  const leftItems = items.filter((item) => item.position === 'left');
+  const rightItems = items.filter((item) => item.position === 'right');
+
   return (
     <nav className={`${styles.navbar} ${!isNavbarVisible ? styles.navbarHidden : ''}`}>
       <div className={styles.navbarInner}>
         <div className={styles.navbarItems}>
-          <Link to="/" className={styles.navbarBrand}>
-            <img src={useBaseUrl('/img/esy-logo.svg')} alt="Esy Logo" className={styles.navbarLogo} />
-            <span className={styles.navbarTitle}>Guide</span>
-          </Link>
+          <NavbarMobileSidebarToggle />
+          <NavbarLogo />
           
           <div className={styles.navbarItemsLeft}>
-            <Link to="/" className={styles.navbarLink}>Contents</Link>
-            <a href="https://esy.com/school" className={styles.navbarLink}>School</a>
-            <a href="https://esy.com/essays" className={styles.navbarLink}>Essays</a>
-            <a href="https://esy.com/blog" className={styles.navbarLink}>Blog</a>
+            {leftItems.map((item, i) => (
+              <NavbarItem {...item} key={i} />
+            ))}
           </div>
         </div>
 
         <div className={styles.navbarItemsRight}>
-          <a href="https://app.esy.com" className={styles.navbarCta}>
-            Open in Esy
-          </a>
-          
-          <button
-            aria-label="Navigation bar toggle"
-            className={styles.navbarToggle}
-            type="button"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          {rightItems.map((item, i) => (
+            <NavbarItem {...item} key={i} />
+          ))}
+          <NavbarColorModeToggle className={styles.colorModeToggle} />
         </div>
       </div>
-      
-      {/* Mobile menu - simplified version */}
-      {isMobileMenuOpen && (
-        <div className={styles.mobileMenu}>
-          <Link to="/" className={styles.mobileLink} onClick={() => setIsMobileMenuOpen(false)}>Contents</Link>
-          <a href="https://esy.com/school" className={styles.mobileLink}>School</a>
-          <a href="https://esy.com/essays" className={styles.mobileLink}>Essays</a>
-          <a href="https://esy.com/blog" className={styles.mobileLink}>Blog</a>
-          <a href="https://app.esy.com" className={styles.mobileCta}>Open in Esy</a>
-        </div>
-      )}
     </nav>
   );
 }
 
-export default Navbar;
+export default function Navbar() {
+  return <NavbarContent />;
+}

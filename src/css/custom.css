@@ -6,15 +6,23 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #6366f1;
+  --ifm-color-primary-dark: #4f46e5;
+  --ifm-color-primary-darker: #4338ca;
+  --ifm-color-primary-darkest: #3730a3;
+  --ifm-color-primary-light: #818cf8;
+  --ifm-color-primary-lighter: #a5b4fc;
+  --ifm-color-primary-lightest: #c7d2fe;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-navbar-background-color: rgba(10, 10, 15, 0.95);
+  --ifm-navbar-height: 4rem;
+  --ifm-navbar-link-color: #94a3b8;
+  --ifm-navbar-link-hover-color: #ffffff;
+  --ifm-footer-background-color: #16161f;
+  --ifm-footer-color: #94a3b8;
+  --ifm-footer-link-color: #94a3b8;
+  --ifm-footer-link-hover-color: #ffffff;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,4 +35,81 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom navbar styling */
+.navbar {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #2a2a3a;
+}
+
+.navbar__title {
+  font-weight: 700;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.navbar__title::before {
+  content: '-';
+  position: absolute;
+  left: 0.5rem;
+  color: #64748b;
+}
+
+.navbar__logo {
+  margin-right: 0.5rem;
+}
+
+.navbar__item {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.navbar__link--active {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+/* Style the "Open in Esy" button */
+.navbar__item[href="https://app.esy.com"] {
+  background: var(--ifm-color-primary);
+  color: #ffffff !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+  margin-left: 1rem;
+}
+
+.navbar__item[href="https://app.esy.com"]:hover {
+  background: var(--ifm-color-primary-dark);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+/* Custom footer styling */
+.footer {
+  padding: 3rem 2rem;
+  border-top: 1px solid #2a2a3a;
+}
+
+.footer__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.footer__link-item {
+  font-size: 14px;
+}
+
+/* Social links in footer */
+.footer__links .footer__col:first-child {
+  flex: 2.5;
+}
+
+/* Hide dark mode toggle if not needed */
+.navbar__toggle {
+  display: none;
 }

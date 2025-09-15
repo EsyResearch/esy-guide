@@ -60,7 +60,7 @@ const config: Config = {
     image: 'img/docusaurus-social-card.jpg', // replace with your social card when ready
 
     navbar: {
-      title: 'Guide',
+      title: 'The Essay Writing Guide',
       logo: {
         alt: 'Esy Logo',
         src: 'img/esy-logo.svg',

@@ -28,7 +28,6 @@ function Footer() {
         <div className={styles.footerBrand}>
           <div className={styles.footerLogo}>
             <img src={useBaseUrl('/img/esy-logo.svg')} alt="Esy Logo" width="60" height="60" />
-            <span>esy</span>
           </div>
           <p className={styles.footerDesc}>
             Write your next paper with Esy, an AI assistant that learns your writing style to create original, authentic essays.
