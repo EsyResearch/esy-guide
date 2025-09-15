@@ -1,6 +1,6 @@
 # Netlify configuration
 [build]
-  command = "cp docusaurus.config.netlify.ts docusaurus.config.ts && npm run build"
+  command = "cp docusaurus.config.proxy.ts docusaurus.config.ts && npm run build"
   functions = "netlify/functions"
   publish = "build"
   
