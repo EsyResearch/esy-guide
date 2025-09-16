@@ -96,7 +96,7 @@ function Footer() {
       */}
       
       <div className={styles.footerBottom}>
-        <p>&copy; 2025 Esy, LLC. All rights reserved.</p>
+        <p>&copy; 2026 Esy, LLC. All rights reserved.</p>
       </div>
     </footer>
   );
