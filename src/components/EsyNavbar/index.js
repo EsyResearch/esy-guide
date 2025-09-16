@@ -3,11 +3,10 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useThemeConfig, useColorMode} from '@docusaurus/theme-common';
 import Logo from "../Logo";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 import styles from './styles.module.css';
 
 export default function EsyNavbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const {colorMode, setColorMode} = useColorMode();
 
@@ -31,34 +30,6 @@ export default function EsyNavbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [mounted]);
 
-  useEffect(() => {
-    if (!mounted) return;
-
-    // Close mobile menu on resize to desktop
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [mounted]);
-
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    if (!mounted) return;
-
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [mobileMenuOpen, mounted]);
 
   // Render a placeholder navbar during SSR to prevent errors
   if (!mounted) {
@@ -87,56 +58,23 @@ export default function EsyNavbar() {
         
         {/* Right side items */}
         <div className={styles.navRight}>
-          {/* Desktop Navigation */}
-          <div className={`${styles.navLinks} ${styles.desktopNav}`}>
+          {/* Navigation */}
+          <div className={styles.navLinks}>
             <a href="https://app.esy.com" className={styles.navCta}>Write</a>
           </div>
 
-          {/* Desktop Theme Toggle */}
+          {/* Theme Toggle */}
           <button
-            className={`${styles.themeToggle} ${styles.desktopOnly}`}
+            className={styles.themeToggle}
             onClick={() => setColorMode(colorMode === 'dark' ? 'light' : 'dark')}
             aria-label="Toggle theme"
           >
             {colorMode === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
 
-          {/* Mobile Menu Button */}
-          <button 
-            className={styles.mobileMenuButton}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      <div className={`${styles.mobileNav} ${mobileMenuOpen ? styles.mobileNavOpen : ''}`}>
-        <div className={styles.mobileNavLinks}>
-          <a href="https://app.esy.com" className={styles.mobileNavCta}>Write</a>
-          <button
-            className={styles.mobileThemeToggle}
-            onClick={() => {
-              setColorMode(colorMode === 'dark' ? 'light' : 'dark');
-              setMobileMenuOpen(false);
-            }}
-          >
-            {colorMode === 'dark' ? (
-              <>
-                <Sun size={20} />
-                <span>Light Mode</span>
-              </>
-            ) : (
-              <>
-                <Moon size={20} />
-                <span>Dark Mode</span>
-              </>
-            )}
-          </button>
-        </div>
-      </div>
     </nav>
   );
 }
