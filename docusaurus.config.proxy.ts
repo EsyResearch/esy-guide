@@ -63,15 +63,15 @@ const config: Config = {
           items: [
             {
               label: 'Essays',
-              href: 'https://esy.com/essays',
+              href: '/essays',
             },
             {
               label: 'AI Writing Tools',
-              href: 'https://esy.com/ai-writing-tools',
+              href: '/ai-writing-tools',
             },
             {
               label: 'Writing Prompts',
-              href: 'https://esy.com/prompts',
+              href: '/prompts',
             },
           ],
         },
@@ -80,19 +80,19 @@ const config: Config = {
           items: [
             {
               label: 'School',
-              href: 'https://esy.com/school',
+              href: '/school',
             },
             {
               label: 'Glossary',
-              href: 'https://esy.com/glossary',
+              href: '/glossary',
             },
             {
               label: 'How to Write',
-              href: 'https://esy.com/how-to-write',
+              href: '/how-to-write',
             },
             {
               label: 'Guide',
-              href: 'https://esy.com/guide',
+              href: '/guide',
             },
           ],
         },
@@ -101,15 +101,15 @@ const config: Config = {
           items: [
             {
               label: 'AI Essay Writer',
-              href: 'https://esy.com/ai-essay-writer',
+              href: '/ai-essay-writer',
             },
             {
               label: 'Agentic Workflows',
-              href: 'https://esy.com/agentic-workflows',
+              href: '/agentic-workflows',
             },
             {
               label: 'Extended School Year',
-              href: 'https://esy.com/extended-school-year',
+              href: '/extended-school-year',
             },
           ],
         },
@@ -118,23 +118,23 @@ const config: Config = {
           items: [
             {
               label: 'About Us',
-              href: 'https://esy.com/about',
+              href: '/about',
             },
             {
               label: 'Contact',
-              href: 'https://esy.com/contact',
+              href: '/contact',
             },
             {
               label: 'Privacy',
-              href: 'https://esy.com/privacy',
+              href: '/privacy',
             },
             {
               label: 'Cookies',
-              href: 'https://esy.com/cookies',
+              href: '/cookies',
             },
             {
               label: 'Terms',
-              href: 'https://esy.com/terms',
+              href: '/terms',
             },
           ],
         },

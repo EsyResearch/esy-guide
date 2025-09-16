@@ -56,18 +56,18 @@ function Footer() {
         <FooterColumn 
           title="Explore"
           links={[
-            { href: "https://esy.com/essays", text: "Essays" },
-            { href: "https://esy.com/ai-writing-tools", text: "AI Writing Tools" },
-            { href: "https://esy.com/writing-prompts", text: "Writing Prompts" },
+            { href: "/essays", text: "Essays" },
+            { href: "/ai-writing-tools", text: "AI Writing Tools" },
+            { href: "/writing-prompts", text: "Writing Prompts" },
           ]}
         />
         
         <FooterColumn 
           title="Learn"
           links={[
-            { href: "https://esy.com/school", text: "School" },
-            { href: "https://esy.com/glossary", text: "Glossary" },
-            { href: "https://esy.com/how-to-write", text: "How to Write" },
+            { href: "/school", text: "School" },
+            { href: "/glossary", text: "Glossary" },
+            { href: "/how-to-write", text: "How to Write" },
             { to: "/", text: "Essay Guide" }, // This guide itself
           ]}
         />
@@ -75,20 +75,20 @@ function Footer() {
         <FooterColumn 
           title="Resources"
           links={[
-            { href: "https://esy.com/ai-essay-writer", text: "AI Essay Writer" },
-            { href: "https://esy.com/agentic-workflows", text: "Agentic Workflows" },
-            { href: "https://esy.com/extended-school-year", text: "Extended School Year" },
+            { href: "/ai-essay-writer", text: "AI Essay Writer" },
+            { href: "/agentic-workflows", text: "Agentic Workflows" },
+            { href: "/extended-school-year", text: "Extended School Year" },
           ]}
         />
         
         <FooterColumn 
           title="Company"
           links={[
-            { href: "https://esy.com/about", text: "About Us" },
-            { href: "https://esy.com/contact", text: "Contact" },
-            { href: "https://esy.com/privacy", text: "Privacy" },
-            { href: "https://esy.com/cookies", text: "Cookies" },
-            { href: "https://esy.com/terms", text: "Terms" },
+            { href: "/about", text: "About Us" },
+            { href: "/contact", text: "Contact" },
+            { href: "/privacy", text: "Privacy" },
+            { href: "/cookies", text: "Cookies" },
+            { href: "/terms", text: "Terms" },
           ]}
         />
       </div>
