@@ -149,6 +149,12 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Esy.`,
     },
 
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
+
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
