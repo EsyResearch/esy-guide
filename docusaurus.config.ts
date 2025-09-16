@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Esy Writing Guide',
   tagline: 'The Ultimate Essay Writing Guide',
-  favicon: 'favicon.ico',
+  favicon: '/guide/favicon.ico',
   
   headTags: [
     {
@@ -15,7 +15,7 @@ const config: Config = {
       attributes: {
         rel: 'apple-touch-icon',
         sizes: '180x180',
-        href: 'apple-touch-icon.png',
+        href: '/guide/apple-touch-icon.png',
       },
     },
     {
@@ -24,7 +24,7 @@ const config: Config = {
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
-        href: 'favicon-32x32.png',
+        href: '/guide/favicon-32x32.png',
       },
     },
     {
@@ -33,14 +33,14 @@ const config: Config = {
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
-        href: 'favicon-16x16.png',
+        href: '/guide/favicon-16x16.png',
       },
     },
     {
       tagName: 'link',
       attributes: {
         rel: 'manifest',
-        href: 'manifest.json',
+        href: '/guide/manifest.json',
       },
     },
   ],
