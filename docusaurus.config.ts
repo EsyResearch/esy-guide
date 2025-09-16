@@ -7,9 +7,17 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Esy Writing Guide',
   tagline: 'The Ultimate Essay Writing Guide',
-  favicon: '/guide/favicon.ico',
+  favicon: '/guide/favicon.ico?v=2',
   
   headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'shortcut icon',
+        type: 'image/x-icon',
+        href: '/guide/favicon.ico',
+      },
+    },
     {
       tagName: 'link',
       attributes: {
