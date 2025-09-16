@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Esy Writing Guide',
   tagline: 'The Ultimate Essay Writing Guide',
-  favicon: 'img/favicon.ico',
+  favicon: 'favicon.ico',
 
   future: {
     v4: true,
