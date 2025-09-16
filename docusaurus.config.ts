@@ -8,6 +8,42 @@ const config: Config = {
   title: 'Esy Writing Guide',
   tagline: 'The Ultimate Essay Writing Guide',
   favicon: 'favicon.ico',
+  
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/guide/apple-touch-icon.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/guide/favicon-32x32.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/guide/favicon-16x16.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'manifest',
+        href: '/guide/manifest.json',
+      },
+    },
+  ],
 
   future: {
     v4: true,
@@ -58,6 +94,11 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg', // replace with your social card when ready
+    
+    metadata: [
+      {name: 'msapplication-TileColor', content: '#8b5cf6'},
+      {name: 'theme-color', content: '#8b5cf6'},
+    ],
 
     navbar: {
       title: 'Essay Guide',
