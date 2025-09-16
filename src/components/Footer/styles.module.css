@@ -1,6 +1,6 @@
 /* Footer styles matching main esy.com site */
 .footer {
-  padding: 3rem 2rem;
+  padding: 0;
   background: #16161f;
   border-top: 1px solid #2a2a3a;
 }
@@ -92,9 +92,7 @@
 }
 
 .footerBottom {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #2a2a3a;
+  padding: 1.5rem 2rem;
   text-align: center;
   color: #64748b;
   font-size: 0.875rem;

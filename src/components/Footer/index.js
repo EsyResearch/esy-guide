@@ -24,6 +24,7 @@ function Footer() {
 
   return (
     <footer className={styles.footer}>
+      {/* Upper footer section commented out for now
       <div className={styles.footerContent}>
         <div className={styles.footerBrand}>
           <div className={styles.footerLogo}>
@@ -92,6 +93,7 @@ function Footer() {
           ]}
         />
       </div>
+      */}
       
       <div className={styles.footerBottom}>
         <p>&copy; 2025 Esy, LLC. All rights reserved.</p>

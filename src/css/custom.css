@@ -4,17 +4,51 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+/* Esy Design System - Refined Academic Minimalism */
+@import url('https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,300;7..72,400;7..72,500&family=Inter:wght@400;500;600&display=swap');
+
+/* Light Mode Variables */
 :root {
-  --ifm-color-primary: #6366f1;
-  --ifm-color-primary-dark: #4f46e5;
-  --ifm-color-primary-darker: #4338ca;
-  --ifm-color-primary-darkest: #3730a3;
-  --ifm-color-primary-light: #818cf8;
-  --ifm-color-primary-lighter: #a5b4fc;
-  --ifm-color-primary-lightest: #c7d2fe;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* Core Colors */
+  --ifm-color-primary: #8b5cf6;
+  --ifm-color-primary-dark: #7c3aed;
+  --ifm-color-primary-darker: #6d28d9;
+  --ifm-color-primary-darkest: #5b21b6;
+  --ifm-color-primary-light: #a78bfa;
+  --ifm-color-primary-lighter: #c4b5fd;
+  --ifm-color-primary-lightest: #ddd6fe;
+  
+  /* Backgrounds */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #fafafa;
+  --ifm-code-background: #f5f5f5;
+  
+  /* Typography */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ifm-heading-font-family: 'Literata', Georgia, serif;
+  --ifm-font-weight-light: 300;
+  --ifm-font-weight-normal: 400;
+  --ifm-font-weight-semibold: 500;
+  --ifm-font-weight-bold: 600;
+  --ifm-line-height-base: 1.7;
+  --ifm-heading-line-height: 1.2;
+  
+  /* Text Colors with Opacity */
+  --ifm-font-color-base: rgba(0, 0, 0, 0.9);
+  --ifm-font-color-secondary: rgba(0, 0, 0, 0.7);
+  --ifm-font-color-tertiary: rgba(0, 0, 0, 0.5);
+  
+  /* Spacing */
+  --ifm-spacing-vertical: 1.5rem;
+  --ifm-leading-desktop: 4rem;
+  --ifm-leading-mobile: 2rem;
+  --ifm-paragraph-margin-bottom: 1.75rem;
+  
+  /* Code */
+  --ifm-code-font-size: 0.875rem;
+  --docusaurus-highlighted-code-line-bg: rgba(139, 92, 246, 0.1);
+  
+  /* Navbar & Footer (keeping existing) */
   --ifm-navbar-background-color: rgba(10, 10, 15, 0.95);
   --ifm-navbar-height: 4rem;
   --ifm-navbar-link-color: #94a3b8;
@@ -23,18 +57,52 @@
   --ifm-footer-color: #94a3b8;
   --ifm-footer-link-color: #94a3b8;
   --ifm-footer-link-hover-color: #ffffff;
+  
+  /* Transitions */
+  --ifm-transition-fast: 0.2s ease;
+  --ifm-transition-slow: 0.3s ease;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark Mode - Esy Design System */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  /* Core Colors - Single Accent */
+  --ifm-color-primary: #8b5cf6;
+  --ifm-color-primary-dark: #7c3aed;
+  --ifm-color-primary-darker: #6d28d9;
+  --ifm-color-primary-darkest: #5b21b6;
+  --ifm-color-primary-light: #a78bfa;
+  --ifm-color-primary-lighter: #c4b5fd;
+  --ifm-color-primary-lightest: #ddd6fe;
+  
+  /* Backgrounds - Pure Black System */
+  --ifm-background-color: #0a0a0f;
+  --ifm-background-surface-color: #16161f;
+  --ifm-code-background: #16161f;
+  --ifm-toc-border-color: rgba(255, 255, 255, 0.1);
+  --ifm-color-emphasis-300: #16161f;
+  
+  /* Text Colors with Opacity Hierarchy */
+  --ifm-font-color-base: rgba(255, 255, 255, 1);
+  --ifm-font-color-secondary: rgba(255, 255, 255, 0.7);
+  --ifm-font-color-tertiary: rgba(255, 255, 255, 0.5);
+  --ifm-color-secondary-contrast-foreground: rgba(255, 255, 255, 0.3);
+  
+  /* Sidebar & Navigation */
+  --ifm-menu-color: rgba(255, 255, 255, 0.7);
+  --ifm-menu-color-active: #8b5cf6;
+  --ifm-menu-color-background-active: rgba(139, 92, 246, 0.1);
+  --ifm-menu-color-background-hover: rgba(255, 255, 255, 0.05);
+  
+  /* Links */
+  --ifm-link-color: #8b5cf6;
+  --ifm-link-hover-color: #a78bfa;
+  
+  /* Code Highlighting */
+  --docusaurus-highlighted-code-line-bg: rgba(139, 92, 246, 0.2);
+  
+  /* Breadcrumbs */
+  --ifm-breadcrumb-color-active: rgba(255, 255, 255, 0.7);
+  --ifm-breadcrumb-item-background-active: transparent;
 }
 
 /* Custom navbar styling */
@@ -103,6 +171,80 @@
   padding-top: var(--ifm-navbar-height);
 }
 
+/* Typography - Refined Academic Minimalism */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: var(--ifm-font-weight-light);
+  line-height: var(--ifm-heading-line-height);
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: var(--ifm-heading-margin-bottom);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Article content width */
+article {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Paragraph spacing */
+p {
+  margin-bottom: var(--ifm-paragraph-margin-bottom);
+}
+
+/* Links - minimal hover effect */
+a {
+  transition: var(--ifm-transition-fast);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/* Code blocks - elevated surface */
+[data-theme='dark'] pre {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Inline code */
+code {
+  background: var(--ifm-code-background);
+  border: none;
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  font-size: var(--ifm-code-font-size);
+}
+
+/* Blockquotes - minimal style */
+blockquote {
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--ifm-font-color-secondary);
+}
+
 /* Add padding around the main document */
 .theme-doc-markdown {
   padding: 1rem 0;
@@ -121,31 +263,251 @@ main[class*="docMainContainer"] {
   border-top: 1px solid var(--ifm-toc-border-color);
 }
 
-/* Add padding to sidebar */
+/* Sidebar - Minimal Academic Style */
 .theme-doc-sidebar-container {
   padding-top: 4rem;
+  background: var(--ifm-background-color);
+  border-right: 1px solid var(--ifm-toc-border-color);
 }
 
 aside[class*="docSidebarContainer"] {
   padding-top: 4rem;
 }
 
-/* Add padding to sidebar menu */
+/* Sidebar menu styling */
 .menu {
   padding: 1rem 0;
+  font-size: 0.875rem;
 }
 
-/* Add spacing to sidebar items */
-.theme-doc-sidebar-menu {
-  padding: 0 0.5rem;
+.menu__list {
+  margin: 0;
+  padding: 0;
 }
 
-/* Ensure TOC (table of contents) has proper spacing */
+.menu__link {
+  padding: 0.625rem 1rem;
+  color: var(--ifm-menu-color);
+  font-weight: var(--ifm-font-weight-normal);
+  transition: var(--ifm-transition-fast);
+  border-radius: 0;
+}
+
+.menu__link:hover {
+  background: var(--ifm-menu-color-background-hover);
+  color: var(--ifm-font-color-base);
+}
+
+.menu__link--active {
+  color: var(--ifm-menu-color-active);
+  background: var(--ifm-menu-color-background-active);
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+/* Table of Contents - Right sidebar */
 .theme-doc-toc-desktop {
   padding-top: 4rem;
 }
 
-/* Add padding to breadcrumbs */
+.table-of-contents {
+  font-size: 0.813rem;
+  padding-left: 0;
+}
+
+.table-of-contents__link {
+  color: var(--ifm-font-color-tertiary);
+  padding: 0.5rem 0;
+  transition: var(--ifm-transition-fast);
+}
+
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+}
+
+/* Breadcrumbs - Subtle */
 .theme-doc-breadcrumbs {
   padding: 1rem 0 2rem 0;
+  font-size: 0.875rem;
+}
+
+.breadcrumbs__link {
+  color: var(--ifm-font-color-tertiary);
+  transition: var(--ifm-transition-fast);
+}
+
+.breadcrumbs__link:hover {
+  color: var(--ifm-font-color-secondary);
+}
+
+/* Pagination - Minimal */
+.pagination-nav {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.pagination-nav__link {
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 0;
+  transition: var(--ifm-transition-fast);
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+/* Buttons - Single accent color */
+.button {
+  border-radius: 6px;
+  font-weight: var(--ifm-font-weight-semibold);
+  transition: var(--ifm-transition-fast);
+  border: none;
+  text-decoration: none;
+}
+
+.button--primary {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.button--primary:hover {
+  background: var(--ifm-color-primary-dark);
+  opacity: 1;
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
+}
+
+.button--secondary:hover {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+/* Tables - Academic journal style */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+  font-size: 0.875rem;
+}
+
+th {
+  font-weight: var(--ifm-font-weight-semibold);
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 2px solid var(--ifm-toc-border-color);
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+/* Alerts/Admonitions - Minimal style */
+.admonition {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 0;
+  border-left: 4px solid var(--ifm-color-primary);
+  background: var(--ifm-background-surface-color);
+}
+
+.admonition-heading {
+  font-weight: var(--ifm-font-weight-semibold);
+  margin-bottom: 0.5rem;
+}
+
+/* Search - Minimal style */
+[data-theme='dark'] .navbar__search-input {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--ifm-font-color-base);
+}
+
+.navbar__search-input::placeholder {
+  color: var(--ifm-font-color-tertiary);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  :root {
+    --ifm-leading-desktop: 2rem;
+    --ifm-paragraph-margin-bottom: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  
+  article {
+    padding: 0 1rem;
+  }
+}
+
+/* Remove all decorative elements */
+.hero {
+  background: var(--ifm-background-color);
+  padding: var(--ifm-leading-desktop) 0;
+}
+
+.hero--primary {
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+/* Lists - Clean spacing */
+ul, ol {
+  margin: 0 0 var(--ifm-paragraph-margin-bottom) 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Horizontal rules - Subtle */
+hr {
+  border: none;
+  border-top: 1px solid var(--ifm-toc-border-color);
+  margin: 3rem 0;
+}
+
+/* Remove shadows and rounded corners globally */
+* {
+  box-shadow: none !important;
+}
+
+img {
+  border-radius: 0;
+}
+
+/* Ensure content feels premium through spacing */
+.markdown {
+  line-height: var(--ifm-line-height-base);
+}
+
+.markdown > :first-child {
+  margin-top: 0;
+}
+
+/* No gradients or decorative backgrounds */
+.gradient-text,
+.bg-gradient {
+  background: none;
+  color: inherit;
 }
