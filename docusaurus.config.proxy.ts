@@ -7,7 +7,51 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Esy Writing Guide',
   tagline: 'The Ultimate Essay Writing Guide',
-  favicon: 'img/favicon.ico',
+  favicon: 'favicon.ico',
+  
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: 'favicon.ico',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: 'apple-touch-icon.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: 'favicon-32x32.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: 'favicon-16x16.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'manifest',
+        href: 'manifest.json',
+      },
+    },
+  ],
 
   future: {
     v4: true,
