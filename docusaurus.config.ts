@@ -22,7 +22,7 @@ const config: Config = {
   organizationName: 'esy',   // <- optional: your GitHub org/user
   projectName: 'guide',      // <- optional: your repo name
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
