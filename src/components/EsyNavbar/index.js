@@ -81,12 +81,17 @@ export default function EsyNavbar() {
   return (
     <nav className={`${styles.nav} navbar navbar--fixed-top`} role="navigation">
       <div className={styles.navInner}>
-        <a href="/" className={styles.logo}>
+        <a href="/guide" className={styles.logo}>
           <Logo suffix="Essay Guide" showText={false} />
         </a>
         
         {/* Right side items */}
         <div className={styles.navRight}>
+          {/* Desktop Navigation */}
+          <div className={`${styles.navLinks} ${styles.desktopNav}`}>
+            <a href="https://app.esy.com" className={styles.navCta}>Write</a>
+          </div>
+
           {/* Desktop Theme Toggle */}
           <button
             className={`${styles.themeToggle} ${styles.desktopOnly}`}
@@ -110,7 +115,7 @@ export default function EsyNavbar() {
       {/* Mobile Navigation Menu */}
       <div className={`${styles.mobileNav} ${mobileMenuOpen ? styles.mobileNavOpen : ''}`}>
         <div className={styles.mobileNavLinks}>
-          {/* <a href="https://app.esy.com" className={styles.mobileNavCta}>Start Writing</a> */}
+          <a href="https://app.esy.com" className={styles.mobileNavCta}>Write</a>
           <button
             className={styles.mobileThemeToggle}
             onClick={() => {
